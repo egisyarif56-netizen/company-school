@@ -1,0 +1,232 @@
+/* =====================================================
+   kontak.css
+   Style KHUSUS untuk halaman Kontak.
+   ===================================================== */
+
+/* ---------- Banner judul versi GELAP (khusus halaman Kontak) ---------- */
+.page-banner--dark {
+    background-color: var(--color-primary);
+}
+
+.page-banner--dark h1 {
+    color: #ffffff;
+}
+
+.page-banner--dark p {
+    color: #cddcf0;
+}
+
+.page-banner--dark .page-banner__breadcrumb,
+.page-banner--dark .page-banner__breadcrumb a {
+    color: #bcd0ea;
+}
+
+.page-banner--dark .page-banner__breadcrumb span {
+    color: #7f9dc4;
+}
+
+/* ---------- Peta ---------- */
+.kontak-map {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
+    margin: 40px 0 55px;
+}
+
+.kontak-map iframe {
+    width: 100%;
+    height: 420px;
+    border: 0;
+    display: block;
+}
+
+/* ---------- Section Hubungi Kami ---------- */
+.kontak-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    padding-bottom: 60px;
+}
+
+.kontak-info h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1c1f22;
+    margin-bottom: 14px;
+}
+
+.kontak-info > p {
+    font-size: 14.5px;
+    color: #5b6472;
+    margin-bottom: 28px;
+    max-width: 520px;
+}
+
+.kontak-info-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 26px;
+}
+
+.kontak-info-item__icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background-color: var(--color-light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kontak-info-item__icon svg {
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 2;
+}
+
+.kontak-info-item h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1c1f22;
+    margin-bottom: 4px;
+}
+
+.kontak-info-item p {
+    font-size: 14px;
+    color: #5b6472;
+    line-height: 1.6;
+}
+
+/* ---------- Kartu Form Kirim Pesan ---------- */
+.kontak-form-card {
+    background-color: var(--color-light-bg);
+    border: 1px solid #e3e6ea;
+    border-radius: 12px;
+    padding: 38px;
+}
+
+.kontak-form-card h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 24px;
+}
+
+.kontak-form-group {
+    margin-bottom: 20px;
+}
+
+.kontak-form-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.kontak-form-group input,
+.kontak-form-group textarea {
+    width: 100%;
+    border: 1px solid #d7dbe0;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #333;
+    background-color: #ffffff;
+}
+
+.kontak-form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.kontak-form-group input:focus,
+.kontak-form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.kontak-submit-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.kontak-submit-btn:hover {
+    opacity: 0.92;
+}
+
+.kontak-alert {
+    background-color: #d1f5df;
+    color: #126b3d;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* ---------- CTA "Mari Berkolaborasi" ---------- */
+.kontak-cta {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 60px;
+    min-height: 260px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.kontak-cta img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.kontak-cta::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 15, 35, 0.8), rgba(0, 15, 35, 0.15));
+    z-index: 2;
+}
+
+.kontak-cta__body {
+    position: relative;
+    z-index: 3;
+    padding: 35px 40px;
+    color: #ffffff;
+}
+
+.kontak-cta__body h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.kontak-cta__body p {
+    font-size: 15px;
+    max-width: 560px;
+    color: #e7ecf3;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 850px) {
+    .kontak-grid {
+        grid-template-columns: 1fr;
+    }
+}

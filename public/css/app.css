@@ -1,0 +1,354 @@
+/* =====================================================
+   app.css
+   Berisi style GLOBAL yang dipakai di semua halaman:
+   - Reset dasar
+   - Navbar
+   - Tombol
+   - Footer
+   Setiap halaman spesifik (misal: profil, beranda) punya
+   file CSS sendiri, contoh: profil.css
+   ===================================================== */
+
+/* ---------- Variabel Warna ----------
+   Disimpan sebagai CSS Variable supaya gampang diubah
+   dari satu tempat saja kalau warna sekolah beda */
+:root {
+    --color-primary: #003f87;      /* navy utama (navbar, footer, banner) */
+    --color-primary-dark: #002d61; /* navy lebih gelap untuk gradasi/hover */
+    --color-navy-box: #003f87;     /* biru untuk kotak Misi (halaman Profil) */
+    --color-light-bg: #f3f4f5;     /* abu terang untuk kotak Visi & badge */
+    --color-banner-bg: #e1e7f1;    /* biru muda untuk banner judul halaman */
+    --color-white-bg: #f8f9fa;     /* putih agak abu untuk background konten */
+    --color-gold: #fdc003;         /* aksen kuning/emas (tombol Login Admin, judul footer) */
+    --color-text: #333333;
+    --color-text-light: #ffffff;
+    --font-main: "Segoe UI", Arial, sans-serif;
+}
+
+/* ---------- Reset Dasar ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text);
+    background-color: var(--color-white-bg);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-primary);
+    padding: 18px 30px;
+    position: relative;
+    z-index: 100;
+}
+
+.navbar__logo {
+    font-weight: bold;
+    font-size: 19px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.navbar__menu a {
+    font-size: 15px;
+    font-weight: 500;
+    color: #e6ecf5;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar__menu a:hover,
+.navbar__menu a.active {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+.navbar__actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn--primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.btn--gold {
+    background-color: var(--color-gold);
+    color: #0a2647;
+}
+
+/* Tombol hamburger untuk menu mobile, disembunyikan di desktop */
+.navbar__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar__toggle span {
+    width: 24px;
+    height: 2px;
+    background-color: #ffffff;
+}
+
+/* =====================================================
+   PAGE BANNER (judul halaman dengan background biru bertekstur)
+   dipakai di semua halaman dalam, misal "Profil Sekolah",
+   "Berita", "Kontak", dll
+   ===================================================== */
+.page-banner {
+    background-color: var(--color-banner-bg);
+    padding: 45px 0;
+}
+
+.page-banner .container {
+    text-align: left;
+}
+
+.page-banner__breadcrumb {
+    font-size: 14px;
+    color: var(--color-primary);
+    margin-bottom: 18px;
+}
+
+.page-banner__breadcrumb a {
+    color: var(--color-primary);
+}
+
+.page-banner__breadcrumb span {
+    margin: 0 6px;
+    color: #7c8aa0;
+}
+
+.page-banner h1 {
+    color: #1c1f22;
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.page-banner p {
+    color: #375279;
+    font-size: 15px;
+    max-width: 640px;
+}
+
+/* Varian gelap untuk banner (dipakai halaman Kontak & Produk) */
+.page-banner--dark {
+    background-color: var(--color-primary);
+}
+
+.page-banner--dark h1 {
+    color: #ffffff;
+}
+
+.page-banner--dark p {
+    color: #cddcf0;
+}
+
+.page-banner--dark .page-banner__breadcrumb,
+.page-banner--dark .page-banner__breadcrumb a {
+    color: #bcd0ea;
+}
+
+.page-banner--dark .page-banner__breadcrumb span {
+    color: #7f9dc4;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.footer {
+    background-color: var(--color-primary-dark);
+    color: #dbe3ee;
+    padding-top: 45px;
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 1.2fr 1fr;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.footer__title {
+    color: var(--color-gold);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer__title--brand {
+    color: #ffffff;
+    font-size: 19px;
+    text-transform: none;
+    letter-spacing: 0.3px;
+}
+
+.footer__jam-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 14px;
+    color: #dbe3ee;
+    margin-bottom: 12px;
+}
+
+.footer__jam-row--tutup span:last-child {
+    color: var(--color-gold);
+}
+
+.footer__text {
+    font-size: 14px;
+    color: #c3cede;
+    margin-bottom: 15px;
+}
+
+.footer__social {
+    display: flex;
+    gap: 10px;
+}
+
+.footer__social a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.footer__social a:hover {
+    background-color: var(--color-gold);
+}
+
+.footer__links {
+    list-style: none;
+}
+
+.footer__links li {
+    margin-bottom: 10px;
+}
+
+.footer__links a {
+    font-size: 14px;
+    color: #c3cede;
+    transition: color 0.2s ease;
+}
+
+.footer__links a:hover {
+    color: var(--color-gold);
+}
+
+.footer__contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #c3cede;
+}
+
+.footer__contact-item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    fill: var(--color-gold);
+}
+
+.footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 16px 0;
+    font-size: 13px;
+    color: #9fb0c8;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 768px) {
+    .navbar__menu {
+        display: none;
+    }
+
+    .navbar__toggle {
+        display: flex;
+    }
+
+    .footer__grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Saat class 'is-open' ditambahkan oleh app.js,
+       menu akan tampil sebagai dropdown vertikal */
+    .navbar__menu.is-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        padding: 15px 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
